@@ -1,0 +1,569 @@
+"country","continent","year","lifeExp","gdpPercap","gdpBillions","popThous"
+"Algeria","Africa",1972,55,4183,61.7,14761
+"Algeria","Africa",1977,58,4910,84.2,17153
+"Algeria","Africa",1982,61,5745,115.1,20034
+"Algeria","Africa",1987,66,5681,132.1,23255
+"Algeria","Africa",1992,68,5023,132.1,26298
+"Algeria","Africa",1997,69,4797,139.5,29072
+"Algeria","Africa",2002,71,5288,165.4,31287
+"Algeria","Africa",2007,72,6223,207.4,33333
+"Angola","Africa",1972,38,5473,32.3,5895
+"Angola","Africa",1977,39,3009,18.5,6163
+"Angola","Africa",1982,40,2757,19.3,7016
+"Angola","Africa",1987,40,2430,19.1,7874
+"Angola","Africa",1992,41,2628,23,8736
+"Angola","Africa",1997,41,2277,22.5,9875
+"Angola","Africa",2002,41,2773,30.1,10866
+"Angola","Africa",2007,43,4797,59.6,12420
+"Australia","Oceania",1972,72,16789,221.2,13177
+"Australia","Oceania",1977,73,18334,258,14074
+"Australia","Oceania",1982,75,19477,295.7,15184
+"Australia","Oceania",1987,76,21889,355.9,16257
+"Australia","Oceania",1992,78,23425,409.5,17482
+"Australia","Oceania",1997,79,26998,501.2,18565
+"Australia","Oceania",2002,80,30688,599.8,19547
+"Australia","Oceania",2007,81,34435,703.7,20434
+"Austria","Europe",1972,71,16662,125.7,7544
+"Austria","Europe",1977,72,19749,149.5,7568
+"Austria","Europe",1982,73,21597,163.6,7575
+"Austria","Europe",1987,75,23688,179.5,7579
+"Austria","Europe",1992,76,27042,214,7915
+"Austria","Europe",1997,78,29096,234.8,8070
+"Austria","Europe",2002,79,32418,264.1,8148
+"Austria","Europe",2007,80,36126,296.2,8200
+"Bahrain","Asia",1972,63,18269,4.2,231
+"Bahrain","Asia",1977,66,19340,5.8,297
+"Bahrain","Asia",1982,69,19211,7.3,378
+"Bahrain","Asia",1987,71,18524,8.4,455
+"Bahrain","Asia",1992,73,19036,10.1,529
+"Bahrain","Asia",1997,74,20292,12.1,599
+"Bahrain","Asia",2002,75,23404,15.4,656
+"Bahrain","Asia",2007,76,29796,21.1,709
+"Bangladesh","Asia",1972,45,630,44.6,70759
+"Bangladesh","Asia",1977,47,660,53.1,80428
+"Bangladesh","Asia",1982,50,677,63,93074
+"Bangladesh","Asia",1987,53,752,78,103764
+"Bangladesh","Asia",1992,56,838,95.3,113705
+"Bangladesh","Asia",1997,59,973,120,123315
+"Bangladesh","Asia",2002,62,1136,154.2,135657
+"Bangladesh","Asia",2007,64,1391,209.3,150448
+"Bosnia and Herzegovina","Europe",1972,67,2860,10.9,3819
+"Bosnia and Herzegovina","Europe",1977,70,3528,14.4,4086
+"Bosnia and Herzegovina","Europe",1982,71,4127,17.2,4173
+"Bosnia and Herzegovina","Europe",1987,71,4314,18.7,4339
+"Bosnia and Herzegovina","Europe",1992,72,2547,10.8,4256
+"Bosnia and Herzegovina","Europe",1997,73,4766,17.2,3607
+"Bosnia and Herzegovina","Europe",2002,74,6019,25.1,4165
+"Bosnia and Herzegovina","Europe",2007,75,7446,33.9,4552
+"Brazil","Americas",1972,60,4986,502.8,100840
+"Brazil","Americas",1977,61,6660,761.3,114314
+"Brazil","Americas",1982,63,7031,906.7,128963
+"Brazil","Americas",1987,65,7807,1115.9,142938
+"Brazil","Americas",1992,67,6950,1084.1,155976
+"Brazil","Americas",1997,69,7958,1341.3,168547
+"Brazil","Americas",2002,71,8131,1462.9,179914
+"Brazil","Americas",2007,72,9066,1722.6,190011
+"Burkina Faso","Africa",1972,44,855,4.6,5434
+"Burkina Faso","Africa",1977,46,743,4.4,5890
+"Burkina Faso","Africa",1982,48,807,5.4,6635
+"Burkina Faso","Africa",1987,50,912,6.9,7587
+"Burkina Faso","Africa",1992,50,932,8.3,8878
+"Burkina Faso","Africa",1997,50,946,9.8,10353
+"Burkina Faso","Africa",2002,51,1038,12.7,12251
+"Burkina Faso","Africa",2007,52,1217,17.4,14326
+"Burundi","Africa",1972,44,464,1.6,3530
+"Burundi","Africa",1977,46,556,2.1,3834
+"Burundi","Africa",1982,47,560,2.6,4580
+"Burundi","Africa",1987,48,622,3.2,5126
+"Burundi","Africa",1992,45,632,3.7,5809
+"Burundi","Africa",1997,45,463,2.8,6122
+"Burundi","Africa",2002,47,446,3.1,7021
+"Burundi","Africa",2007,50,430,3.6,8391
+"Cameroon","Africa",1972,47,1684,11.8,7021
+"Cameroon","Africa",1977,49,1783,14.2,7960
+"Cameroon","Africa",1982,53,2368,21.9,9251
+"Cameroon","Africa",1987,55,2603,28.1,10781
+"Cameroon","Africa",1992,54,1793,22.4,12467
+"Cameroon","Africa",1997,52,1694,24.1,14196
+"Cameroon","Africa",2002,50,1934,30.8,15930
+"Cameroon","Africa",2007,50,2042,36.1,17696
+"Canada","Americas",1972,73,18971,422.7,22284
+"Canada","Americas",1977,74,22091,525.7,23796
+"Canada","Americas",1982,76,22899,577.1,25202
+"Canada","Americas",1987,77,26627,706.9,26550
+"Canada","Americas",1992,78,26343,751.4,28524
+"Canada","Americas",1997,79,28955,877.5,30306
+"Canada","Americas",2002,80,33329,1063.3,31902
+"Canada","Americas",2007,81,36319,1212.7,33390
+"Chad","Africa",1972,46,1104,4.3,3899
+"Chad","Africa",1977,47,1134,5,4388
+"Chad","Africa",1982,50,798,3.9,4875
+"Chad","Africa",1987,51,952,5.2,5499
+"Chad","Africa",1992,52,1058,6.8,6429
+"Chad","Africa",1997,52,1005,7.6,7562
+"Chad","Africa",2002,51,1156,10.2,8836
+"Chad","Africa",2007,51,1704,17.4,10239
+"Congo, Rep.","Africa",1972,55,3213,4.3,1340
+"Congo, Rep.","Africa",1977,56,3259,5,1537
+"Congo, Rep.","Africa",1982,57,4880,8.7,1775
+"Congo, Rep.","Africa",1987,57,4201,8.7,2064
+"Congo, Rep.","Africa",1992,56,4016,9.7,2409
+"Congo, Rep.","Africa",1997,53,3484,9.8,2801
+"Congo, Rep.","Africa",2002,53,3484,11.6,3329
+"Congo, Rep.","Africa",2007,55,3633,13.8,3801
+"Croatia","Europe",1972,70,9164,38.7,4225
+"Croatia","Europe",1977,71,11305,48.8,4319
+"Croatia","Europe",1982,70,13222,58.4,4413
+"Croatia","Europe",1987,72,13823,62,4484
+"Croatia","Europe",1992,73,8448,38,4494
+"Croatia","Europe",1997,74,9876,43.9,4445
+"Croatia","Europe",2002,75,11628,52.1,4481
+"Croatia","Europe",2007,76,14619,65.7,4493
+"Denmark","Europe",1972,73,18866,94.2,4992
+"Denmark","Europe",1977,75,20423,103.9,5088
+"Denmark","Europe",1982,75,21688,111,5118
+"Denmark","Europe",1987,75,25116,128.8,5127
+"Denmark","Europe",1992,75,26407,136.6,5171
+"Denmark","Europe",1997,76,29804,157.5,5284
+"Denmark","Europe",2002,77,32167,172.9,5375
+"Denmark","Europe",2007,78,35278,192.9,5468
+"Djibouti","Africa",1972,44,3694,0.7,179
+"Djibouti","Africa",1977,47,3082,0.7,229
+"Djibouti","Africa",1982,49,2879,0.9,306
+"Djibouti","Africa",1987,50,2880,0.9,311
+"Djibouti","Africa",1992,52,2377,0.9,384
+"Djibouti","Africa",1997,53,1895,0.8,418
+"Djibouti","Africa",2002,53,1908,0.9,447
+"Djibouti","Africa",2007,55,2082,1,496
+"Dominican Republic","Americas",1972,60,2190,10.2,4671
+"Dominican Republic","Americas",1977,62,2682,14.2,5303
+"Dominican Republic","Americas",1982,64,2861,17.1,5968
+"Dominican Republic","Americas",1987,66,2900,19.3,6655
+"Dominican Republic","Americas",1992,68,3044,22.4,7351
+"Dominican Republic","Americas",1997,70,3614,28.9,7992
+"Dominican Republic","Americas",2002,71,4564,39.5,8650
+"Dominican Republic","Americas",2007,72,6025,56.2,9320
+"Egypt","Africa",1972,51,2024,70.5,34807
+"Egypt","Africa",1977,53,2785,108,38784
+"Egypt","Africa",1982,56,3504,160.1,45682
+"Egypt","Africa",1987,60,3885,205.1,52799
+"Egypt","Africa",1992,64,3795,225.4,59402
+"Egypt","Africa",1997,67,4173,276,66134
+"Egypt","Africa",2002,70,4755,348.6,73313
+"Egypt","Africa",2007,71,5581,448,80265
+"Equatorial Guinea","Africa",1972,41,672,0.2,278
+"Equatorial Guinea","Africa",1977,42,959,0.2,193
+"Equatorial Guinea","Africa",1982,44,928,0.3,285
+"Equatorial Guinea","Africa",1987,46,967,0.3,341
+"Equatorial Guinea","Africa",1992,48,1132,0.4,388
+"Equatorial Guinea","Africa",1997,48,2814,1.2,440
+"Equatorial Guinea","Africa",2002,49,7703,3.8,496
+"Equatorial Guinea","Africa",2007,52,12154,6.7,551
+"Eritrea","Africa",1972,44,514,1.2,2260
+"Eritrea","Africa",1977,45,506,1.3,2513
+"Eritrea","Africa",1982,44,525,1.4,2637
+"Eritrea","Africa",1987,46,521,1.5,2916
+"Eritrea","Africa",1992,50,583,2.1,3668
+"Eritrea","Africa",1997,53,913,3.7,4058
+"Eritrea","Africa",2002,55,765,3.4,4415
+"Eritrea","Africa",2007,58,641,3.1,4907
+"Ethiopia","Africa",1972,44,566,17.4,30770
+"Ethiopia","Africa",1977,45,557,19.3,34618
+"Ethiopia","Africa",1982,45,578,22,38112
+"Ethiopia","Africa",1987,47,574,24.7,43000
+"Ethiopia","Africa",1992,48,421,21.9,52089
+"Ethiopia","Africa",1997,49,516,30.9,59861
+"Ethiopia","Africa",2002,51,530,36,67947
+"Ethiopia","Africa",2007,53,691,52.9,76512
+"Finland","Europe",1972,71,14359,66.6,4640
+"Finland","Europe",1977,73,15605,74,4739
+"Finland","Europe",1982,75,18533,89.5,4827
+"Finland","Europe",1987,75,21141,104.3,4932
+"Finland","Europe",1992,76,20647,104.1,5041
+"Finland","Europe",1997,77,23724,121.8,5134
+"Finland","Europe",2002,78,28205,146.5,5193
+"Finland","Europe",2007,79,33207,174,5238
+"France","Europe",1972,72,16107,833.3,51732
+"France","Europe",1977,74,18293,972.5,53165
+"France","Europe",1982,75,20294,1104.7,54434
+"France","Europe",1987,76,22066,1227.6,55630
+"France","Europe",1992,77,24704,1417.4,57374
+"France","Europe",1997,79,25890,1517.7,58623
+"France","Europe",2002,80,28926,1733.4,59925
+"France","Europe",2007,81,30470,1861.2,61084
+"Gabon","Africa",1972,49,11402,6.1,538
+"Gabon","Africa",1977,53,21746,15.4,706
+"Gabon","Africa",1982,57,15113,11.4,754
+"Gabon","Africa",1987,60,11864,10.4,880
+"Gabon","Africa",1992,61,13522,13.3,986
+"Gabon","Africa",1997,60,14723,16.6,1126
+"Gabon","Africa",2002,57,12522,16.3,1299
+"Gabon","Africa",2007,57,13206,19.2,1455
+"Ghana","Africa",1972,50,1178,11,9354
+"Ghana","Africa",1977,52,993,10.5,10538
+"Ghana","Africa",1982,54,876,10,11400
+"Ghana","Africa",1987,56,847,12,14168
+"Ghana","Africa",1992,58,925,15.1,16279
+"Ghana","Africa",1997,59,1005,18.5,18418
+"Ghana","Africa",2002,58,1112,22.9,20551
+"Ghana","Africa",2007,60,1328,30.4,22873
+"Greece","Europe",1972,72,12725,113.1,8889
+"Greece","Europe",1977,74,14196,132.1,9308
+"Greece","Europe",1982,75,15268,149.4,9786
+"Greece","Europe",1987,77,16121,160.8,9974
+"Greece","Europe",1992,77,17541,181.1,10325
+"Greece","Europe",1997,78,18748,196.9,10502
+"Greece","Europe",2002,78,22514,238.7,10604
+"Greece","Europe",2007,79,27538,294.8,10706
+"Guinea","Africa",1972,39,742,2.8,3811
+"Guinea","Africa",1977,41,875,3.7,4227
+"Guinea","Africa",1982,43,857,4,4710
+"Guinea","Africa",1987,46,806,4.6,5650
+"Guinea","Africa",1992,49,794,5.6,6991
+"Guinea","Africa",1997,51,869,7,8049
+"Guinea","Africa",2002,54,946,8.3,8808
+"Guinea","Africa",2007,56,943,9.4,9948
+"Iceland","Europe",1972,74,15798,3.3,209
+"Iceland","Europe",1977,76,19655,4.4,222
+"Iceland","Europe",1982,77,23270,5.4,234
+"Iceland","Europe",1987,77,26923,6.6,245
+"Iceland","Europe",1992,79,25144,6.5,259
+"Iceland","Europe",1997,79,28061,7.6,271
+"Iceland","Europe",2002,80,31163,9,288
+"Iceland","Europe",2007,82,36181,10.9,302
+"India","Asia",1972,51,724,410.5,567000
+"India","Asia",1977,54,813,515.7,634000
+"India","Asia",1982,57,856,605.9,708000
+"India","Asia",1987,59,977,769.5,788000
+"India","Asia",1992,60,1164,1015.4,872000
+"India","Asia",1997,62,1459,1399,959000
+"India","Asia",2002,63,1747,1806.5,1034173
+"India","Asia",2007,65,2452,2722.9,1110396
+"Iran","Asia",1972,55,9614,294.3,30614
+"Iran","Asia",1977,58,11889,421.8,35481
+"Iran","Asia",1982,60,7608,327.7,43073
+"Iran","Asia",1987,63,6643,344.7,51890
+"Iran","Asia",1992,66,7236,437,60398
+"Iran","Asia",1997,68,8264,523.3,63328
+"Iran","Asia",2002,69,9241,618.3,66908
+"Iran","Asia",2007,71,11606,806.1,69454
+"Italy","Europe",1972,72,12269,667,54366
+"Italy","Europe",1977,73,14256,799.2,56059
+"Italy","Europe",1982,75,16537,935,56536
+"Italy","Europe",1987,76,19207,1089.6,56730
+"Italy","Europe",1992,77,22014,1251.3,56841
+"Italy","Europe",1997,79,24675,1418.3,57479
+"Italy","Europe",2002,80,27968,1620.1,57927
+"Italy","Europe",2007,81,28570,1661.3,58148
+"Jordan","Asia",1972,57,2111,3.4,1614
+"Jordan","Asia",1977,61,2852,5.5,1938
+"Jordan","Asia",1982,64,4161,9.8,2347
+"Jordan","Asia",1987,66,4449,12.5,2820
+"Jordan","Asia",1992,68,3432,13.3,3867
+"Jordan","Asia",1997,70,3645,16.5,4526
+"Jordan","Asia",2002,71,3845,20.4,5307
+"Jordan","Asia",2007,73,4519,27.4,6053
+"Korea, Dem. Rep.","Asia",1972,64,3702,54.7,14781
+"Korea, Dem. Rep.","Asia",1977,67,4106,67,16325
+"Korea, Dem. Rep.","Asia",1982,69,4107,72.5,17648
+"Korea, Dem. Rep.","Asia",1987,71,4106,78.3,19068
+"Korea, Dem. Rep.","Asia",1992,70,3726,77.2,20711
+"Korea, Dem. Rep.","Asia",1997,68,1691,36.5,21585
+"Korea, Dem. Rep.","Asia",2002,67,1647,36.6,22215
+"Korea, Dem. Rep.","Asia",2007,67,1593,37.1,23302
+"Kuwait","Asia",1972,68,109348,92.1,842
+"Kuwait","Asia",1977,69,59265,67.6,1140
+"Kuwait","Asia",1982,71,31354,47,1497
+"Kuwait","Asia",1987,74,28118,53.2,1891
+"Kuwait","Asia",1992,75,34933,49.5,1418
+"Kuwait","Asia",1997,76,40301,71.1,1765
+"Kuwait","Asia",2002,77,35110,74.1,2112
+"Kuwait","Asia",2007,78,47307,118.5,2506
+"Libya","Africa",1972,53,21011,45.9,2184
+"Libya","Africa",1977,57,21951,59.7,2722
+"Libya","Africa",1982,62,17364,58.1,3344
+"Libya","Africa",1987,66,11771,44.7,3800
+"Libya","Africa",1992,69,9640,42.1,4365
+"Libya","Africa",1997,72,9467,45.1,4760
+"Libya","Africa",2002,73,9535,51.2,5369
+"Libya","Africa",2007,74,12057,72.8,6037
+"Madagascar","Africa",1972,45,1749,12.4,7082
+"Madagascar","Africa",1977,47,1544,12.4,8007
+"Madagascar","Africa",1982,49,1303,11.9,9171
+"Madagascar","Africa",1987,49,1155,12.2,10569
+"Madagascar","Africa",1992,52,1041,12.7,12210
+"Madagascar","Africa",1997,55,986,14,14165
+"Madagascar","Africa",2002,57,895,14.7,16473
+"Madagascar","Africa",2007,59,1045,20,19168
+"Malaysia","Asia",1972,63,2849,32.6,11441
+"Malaysia","Asia",1977,65,3828,49.2,12845
+"Malaysia","Asia",1982,68,4920,71.1,14442
+"Malaysia","Asia",1987,70,5250,85.7,16332
+"Malaysia","Asia",1992,71,7278,133.3,18320
+"Malaysia","Asia",1997,72,10133,207.5,20476
+"Malaysia","Asia",2002,73,10207,231.3,22662
+"Malaysia","Asia",2007,74,12452,309.1,24821
+"Mali","Africa",1972,40,581,3.4,5828
+"Mali","Africa",1977,42,686,4.5,6492
+"Mali","Africa",1982,44,618,4.3,6998
+"Mali","Africa",1987,46,684,5.2,7634
+"Mali","Africa",1992,48,739,6.2,8416
+"Mali","Africa",1997,50,790,7.4,9385
+"Mali","Africa",2002,52,951,10.1,10580
+"Mali","Africa",2007,54,1043,12.5,12032
+"Mauritius","Africa",1972,63,2575,2.2,851
+"Mauritius","Africa",1977,65,3711,3.4,913
+"Mauritius","Africa",1982,67,3688,3.7,992
+"Mauritius","Africa",1987,69,4784,5,1043
+"Mauritius","Africa",1992,70,6058,6.6,1096
+"Mauritius","Africa",1997,71,7426,8.5,1150
+"Mauritius","Africa",2002,72,9022,10.8,1200
+"Mauritius","Africa",2007,73,10957,13.7,1251
+"Montenegro","Europe",1972,71,7778,4.1,528
+"Montenegro","Europe",1977,73,9596,5.4,560
+"Montenegro","Europe",1982,74,11223,6.3,563
+"Montenegro","Europe",1987,75,11733,6.7,569
+"Montenegro","Europe",1992,75,7003,4.4,622
+"Montenegro","Europe",1997,75,6466,4.5,693
+"Montenegro","Europe",2002,74,6557,4.7,720
+"Montenegro","Europe",2007,75,9254,6.3,685
+"Mozambique","Africa",1972,40,725,7.1,9810
+"Mozambique","Africa",1977,42,502,5.6,11128
+"Mozambique","Africa",1982,43,462,5.8,12587
+"Mozambique","Africa",1987,43,390,5,12892
+"Mozambique","Africa",1992,44,411,5.4,13161
+"Mozambique","Africa",1997,46,472,7.8,16603
+"Mozambique","Africa",2002,44,634,11.7,18474
+"Mozambique","Africa",2007,42,824,16.4,19952
+"Nicaragua","Americas",1972,55,4689,10.2,2183
+"Nicaragua","Americas",1977,57,5486,14,2555
+"Nicaragua","Americas",1982,59,3470,10.3,2979
+"Nicaragua","Americas",1987,62,2956,9.9,3344
+"Nicaragua","Americas",1992,66,2170,8.7,4018
+"Nicaragua","Americas",1997,68,2253,10.4,4610
+"Nicaragua","Americas",2002,71,2475,12.7,5147
+"Nicaragua","Americas",2007,73,2749,15.6,5675
+"Niger","Africa",1972,41,954,4.8,5060
+"Niger","Africa",1977,41,809,4.6,5682
+"Niger","Africa",1982,43,910,5.9,6437
+"Niger","Africa",1987,45,668,4.9,7333
+"Niger","Africa",1992,47,581,4.9,8393
+"Niger","Africa",1997,51,580,5.6,9666
+"Niger","Africa",2002,54,601,6.7,11141
+"Niger","Africa",2007,57,620,8,12895
+"Nigeria","Africa",1972,43,1698,91.3,53740
+"Nigeria","Africa",1977,45,1982,123.3,62209
+"Nigeria","Africa",1982,46,1577,115.2,73039
+"Nigeria","Africa",1987,47,1385,113,81552
+"Nigeria","Africa",1992,47,1620,151.2,93364
+"Nigeria","Africa",1997,47,1625,172.6,106208
+"Nigeria","Africa",2002,47,1615,193.7,119901
+"Nigeria","Africa",2007,47,2014,271.9,135031
+"Norway","Europe",1972,74,18965,74.6,3933
+"Norway","Europe",1977,75,23311,94.3,4043
+"Norway","Europe",1982,76,26299,108.2,4115
+"Norway","Europe",1987,76,31541,132,4186
+"Norway","Europe",1992,77,33966,145.6,4286
+"Norway","Europe",1997,78,41283,181.9,4406
+"Norway","Europe",2002,79,44684,202.7,4536
+"Norway","Europe",2007,80,49357,228.4,4628
+"Panama","Americas",1972,66,5364,8.7,1616
+"Panama","Americas",1977,69,5352,9.8,1840
+"Panama","Americas",1982,70,7010,14.3,2036
+"Panama","Americas",1987,72,7035,15.9,2254
+"Panama","Americas",1992,72,6619,16.4,2485
+"Panama","Americas",1997,74,7114,19.5,2735
+"Panama","Americas",2002,75,7356,22,2991
+"Panama","Americas",2007,76,9809,31.8,3242
+"Paraguay","Americas",1972,66,2523,6.6,2614
+"Paraguay","Americas",1977,66,3248,9.7,2984
+"Paraguay","Americas",1982,67,4259,14.3,3366
+"Paraguay","Americas",1987,67,3999,15.5,3887
+"Paraguay","Americas",1992,68,4196,18.8,4484
+"Paraguay","Americas",1997,69,4247,21.9,5154
+"Paraguay","Americas",2002,71,3784,22.3,5884
+"Paraguay","Americas",2007,72,4173,27.8,6667
+"Peru","Americas",1972,55,5938,82.9,13955
+"Peru","Americas",1977,58,6281,100.4,15990
+"Peru","Americas",1982,61,6435,116.6,18125
+"Peru","Americas",1987,64,6361,128.5,20196
+"Peru","Americas",1992,66,4446,99.7,22430
+"Peru","Americas",1997,68,5838,144.5,24748
+"Peru","Americas",2002,70,5909,158.2,26769
+"Peru","Americas",2007,71,7409,212.4,28675
+"Portugal","Europe",1972,69,9022,80.9,8970
+"Portugal","Europe",1977,70,10172,98.3,9663
+"Portugal","Europe",1982,73,11754,115.9,9860
+"Portugal","Europe",1987,74,13039,129.3,9915
+"Portugal","Europe",1992,75,16207,160.9,9928
+"Portugal","Europe",1997,76,17641,179.2,10156
+"Portugal","Europe",2002,77,19971,208.4,10434
+"Portugal","Europe",2007,78,20510,218.3,10643
+"Puerto Rico","Americas",1972,72,9123,26,2847
+"Puerto Rico","Americas",1977,73,9771,30.1,3081
+"Puerto Rico","Americas",1982,74,10331,33.9,3279
+"Puerto Rico","Americas",1987,75,12281,42.3,3444
+"Puerto Rico","Americas",1992,74,14642,52.5,3585
+"Puerto Rico","Americas",1997,75,16999,63.9,3759
+"Puerto Rico","Americas",2002,78,18856,72.8,3860
+"Puerto Rico","Americas",2007,79,19329,76.2,3942
+"Sao Tome and Principe","Africa",1972,56,1533,0.1,77
+"Sao Tome and Principe","Africa",1977,59,1738,0.2,87
+"Sao Tome and Principe","Africa",1982,60,1890,0.2,99
+"Sao Tome and Principe","Africa",1987,62,1517,0.2,111
+"Sao Tome and Principe","Africa",1992,63,1429,0.2,126
+"Sao Tome and Principe","Africa",1997,63,1339,0.2,146
+"Sao Tome and Principe","Africa",2002,64,1353,0.2,170
+"Sao Tome and Principe","Africa",2007,66,1598,0.3,200
+"Saudi Arabia","Asia",1972,54,24837,160.8,6473
+"Saudi Arabia","Asia",1977,59,34168,277.7,8129
+"Saudi Arabia","Asia",1982,63,33693,379.2,11255
+"Saudi Arabia","Asia",1987,66,21198,309.9,14620
+"Saudi Arabia","Asia",1992,69,24842,421,16946
+"Saudi Arabia","Asia",1997,71,20587,437.1,21230
+"Saudi Arabia","Asia",2002,72,19015,465.9,24502
+"Saudi Arabia","Asia",2007,73,21655,597.7,27601
+"Senegal","Africa",1972,46,1598,7.3,4589
+"Senegal","Africa",1977,49,1562,8.2,5261
+"Senegal","Africa",1982,52,1518,9.3,6148
+"Senegal","Africa",1987,56,1442,10.3,7171
+"Senegal","Africa",1992,58,1368,11.4,8308
+"Senegal","Africa",1997,60,1392,13.3,9535
+"Senegal","Africa",2002,62,1520,16.5,10870
+"Senegal","Africa",2007,63,1712,21,12267
+"Serbia","Europe",1972,69,10522,87.5,8313
+"Serbia","Europe",1977,70,12981,112.8,8686
+"Serbia","Europe",1982,70,15181,137.1,9033
+"Serbia","Europe",1987,71,15871,146.5,9231
+"Serbia","Europe",1992,72,9325,91.6,9826
+"Serbia","Europe",1997,72,7914,81.8,10337
+"Serbia","Europe",2002,73,7236,73.2,10112
+"Serbia","Europe",2007,74,9787,99.3,10150
+"Somalia","Africa",1972,41,1255,4.8,3840
+"Somalia","Africa",1977,42,1451,6.3,4354
+"Somalia","Africa",1982,43,1177,6.9,5829
+"Somalia","Africa",1987,45,1093,7.6,6922
+"Somalia","Africa",1992,40,927,5.7,6100
+"Somalia","Africa",1997,44,931,6.2,6634
+"Somalia","Africa",2002,46,882,6.8,7753
+"Somalia","Africa",2007,48,926,8.4,9119
+"Sri Lanka","Asia",1972,65,1213,15.8,13017
+"Sri Lanka","Asia",1977,66,1349,19,14117
+"Sri Lanka","Asia",1982,69,1648,25.4,15410
+"Sri Lanka","Asia",1987,69,1877,31,16495
+"Sri Lanka","Asia",1992,70,2154,37.9,17587
+"Sri Lanka","Asia",1997,70,2664,49.8,18699
+"Sri Lanka","Asia",2002,71,3015,59,19577
+"Sri Lanka","Asia",2007,72,3970,80.9,20378
+"Sudan","Africa",1972,45,1660,24.2,14597
+"Sudan","Africa",1977,48,2203,37.7,17105
+"Sudan","Africa",1982,50,1896,38.6,20367
+"Sudan","Africa",1987,52,1508,37.3,24726
+"Sudan","Africa",1992,54,1492,42.1,28228
+"Sudan","Africa",1997,55,1632,52.5,32161
+"Sudan","Africa",2002,56,1993,73.9,37090
+"Sudan","Africa",2007,59,2602,110.1,42293
+"Syria","Asia",1972,57,2571,17.2,6701
+"Syria","Asia",1977,61,3195,25.3,7933
+"Syria","Asia",1982,65,3762,35.4,9410
+"Syria","Asia",1987,67,3117,35,11243
+"Syria","Asia",1992,69,3341,44.2,13219
+"Syria","Asia",1997,72,4014,60.5,15081
+"Syria","Asia",2002,73,4091,70.2,17156
+"Syria","Asia",2007,74,4185,80.8,19315
+"Tanzania","Africa",1972,48,916,13.5,14707
+"Tanzania","Africa",1977,50,962,16.5,17130
+"Tanzania","Africa",1982,51,874,17.3,19844
+"Tanzania","Africa",1987,52,832,19.2,23041
+"Tanzania","Africa",1992,50,826,22,26605
+"Tanzania","Africa",1997,48,789,24.2,30687
+"Tanzania","Africa",2002,50,899,31.1,34594
+"Tanzania","Africa",2007,53,1107,42.2,38140
+"Trinidad and Tobago","Americas",1972,66,6620,6.5,975
+"Trinidad and Tobago","Americas",1977,68,7900,8.2,1039
+"Trinidad and Tobago","Americas",1982,69,9120,10.2,1116
+"Trinidad and Tobago","Americas",1987,70,7389,8.8,1191
+"Trinidad and Tobago","Americas",1992,70,7371,8.7,1184
+"Trinidad and Tobago","Americas",1997,69,8793,10,1138
+"Trinidad and Tobago","Americas",2002,69,11461,12.6,1102
+"Trinidad and Tobago","Americas",2007,70,18009,19,1057
+"Tunisia","Africa",1972,56,2753,14.6,5304
+"Tunisia","Africa",1977,60,3121,18.7,6005
+"Tunisia","Africa",1982,64,3560,24,6734
+"Tunisia","Africa",1987,67,3810,29.4,7725
+"Tunisia","Africa",1992,70,4333,36.9,8523
+"Tunisia","Africa",1997,72,4877,45,9232
+"Tunisia","Africa",2002,73,5723,55.9,9771
+"Tunisia","Africa",2007,74,7093,72.9,10276
+"United Kingdom","Europe",1972,72,15895,891.4,56079
+"United Kingdom","Europe",1977,73,17429,979.1,56179
+"United Kingdom","Europe",1982,74,18232,1027.2,56340
+"United Kingdom","Europe",1987,75,21665,1234.5,56982
+"United Kingdom","Europe",1992,76,22705,1313.9,57866
+"United Kingdom","Europe",1997,77,26075,1533.4,58808
+"United Kingdom","Europe",2002,78,29479,1766.2,59912
+"United Kingdom","Europe",2007,79,33203,2018,60776
+"United States","Americas",1972,71,21806,4577,209896
+"United States","Americas",1977,73,24073,5301.7,220239
+"United States","Americas",1982,75,25010,5806.9,232188
+"United States","Americas",1987,75,29884,7256,242804
+"United States","Americas",1992,76,32004,8221.6,256894
+"United States","Americas",1997,77,35767,9761.4,272912
+"United States","Americas",2002,77,39097,11247.3,287676
+"United States","Americas",2007,78,42952,12934.5,301140
+"Uruguay","Americas",1972,69,5703,16.1,2830
+"Uruguay","Americas",1977,69,6504,18.7,2874
+"Uruguay","Americas",1982,71,6920,20.4,2954
+"Uruguay","Americas",1987,72,7452,22.7,3045
+"Uruguay","Americas",1992,73,8137,25.6,3149
+"Uruguay","Americas",1997,74,9230,30.1,3263
+"Uruguay","Americas",2002,75,7727,26,3363
+"Uruguay","Americas",2007,76,10611,36.6,3447
+"Venezuela","Americas",1972,66,10505,121,11516
+"Venezuela","Americas",1977,67,13144,177.5,13504
+"Venezuela","Americas",1982,69,11152,174.2,15621
+"Venezuela","Americas",1987,70,9884,177,17910
+"Venezuela","Americas",1992,71,10734,217.5,20266
+"Venezuela","Americas",1997,72,10165,227.4,22374
+"Venezuela","Americas",2002,73,8605,209,24288
+"Venezuela","Americas",2007,74,11416,297.8,26085
+"Vietnam","Asia",1972,50,700,31.2,44655
+"Vietnam","Asia",1977,56,714,36.1,50534
+"Vietnam","Asia",1982,59,707,39.7,56142
+"Vietnam","Asia",1987,63,821,51.6,62826
+"Vietnam","Asia",1992,68,989,69.2,69941
+"Vietnam","Asia",1997,71,1386,105.4,76049
+"Vietnam","Asia",2002,73,1764,142.8,80908
+"Vietnam","Asia",2007,74,2442,208.2,85262
+"West Bank and Gaza","Asia",1972,57,3133,3.4,1090
+"West Bank and Gaza","Asia",1977,61,3683,4.6,1261
+"West Bank and Gaza","Asia",1982,64,4336,6.2,1426
+"West Bank and Gaza","Asia",1987,67,5107,8.6,1691
+"West Bank and Gaza","Asia",1992,70,6018,12.7,2105
+"West Bank and Gaza","Asia",1997,71,7111,20.1,2826
+"West Bank and Gaza","Asia",2002,72,4515,15.3,3390
+"West Bank and Gaza","Asia",2007,73,3025,12.2,4018
+"Yemen, Rep.","Asia",1972,40,1265,9.4,7407
+"Yemen, Rep.","Asia",1977,44,1830,15.4,8404
+"Yemen, Rep.","Asia",1982,49,1978,19.1,9658
+"Yemen, Rep.","Asia",1987,53,1972,22.1,11219
+"Yemen, Rep.","Asia",1992,56,1879,25.1,13368
+"Yemen, Rep.","Asia",1997,58,2117,33.5,15826
+"Yemen, Rep.","Asia",2002,60,2235,41.8,18701
+"Yemen, Rep.","Asia",2007,63,2281,50.7,22212
+"Zambia","Africa",1972,50,1773,8,4506
+"Zambia","Africa",1977,51,1589,8.3,5217
+"Zambia","Africa",1982,52,1409,8.6,6100
+"Zambia","Africa",1987,51,1213,8.8,7272
+"Zambia","Africa",1992,46,1211,10.1,8381
+"Zambia","Africa",1997,40,1071,10.1,9418
+"Zambia","Africa",2002,39,1072,11.4,10596
+"Zambia","Africa",2007,42,1271,14.9,11746
+"Zimbabwe","Africa",1972,56,799,4.7,5861
+"Zimbabwe","Africa",1977,58,686,4.6,6642
+"Zimbabwe","Africa",1982,60,789,6,7637
+"Zimbabwe","Africa",1987,62,706,6.5,9216
+"Zimbabwe","Africa",1992,60,693,7.4,10704
+"Zimbabwe","Africa",1997,47,792,9,11405
+"Zimbabwe","Africa",2002,40,672,8,11927
+"Zimbabwe","Africa",2007,43,470,5.8,12311

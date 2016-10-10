@@ -1,0 +1,49 @@
+source("clean.R")
+
+#LIFE EXPECTANCY GROWTH RATE OVER TIME BY country
+statNames <- names(select(flash,lifeExp:popThous))
+countryList <- lapply(statNames,function(x){
+  flash %>%
+    spread_("country",x) %>%
+    group_by(year) %>%
+    summarise_at(vars(Algeria:Zimbabwe),function(col) mean(col,na.rm=T)) %>%
+    select(-year) %>% #must remove year because we do not need its growth rate
+    as.matrix %>% log %>% diff %>%#growth rate transformation only possible as matrix
+    tbl_df %>% #mutate() only possible with tibble (or data frame)
+    mutate(year = seq(1977,2007,5)) %>%
+    melt("year",1:71,variable.name="country",value.name=paste(x)) %>%
+    left_join(.,select(flash,country,continent),by="country") %>% #return continents
+    tbl_df -> flash2 #melt defaults to data frame, which is unfortunate
+  if(which(statNames == x) != 1){select_(flash2,x)}else{flash2}
+})
+for(i in 2:length(statNames)) countryList[[1]] <- bind_cols(countryList[[1]],countryList[i])
+flashCountryGrowthRates <- countryList[[1]]
+
+continentGrowthRates_fun <- function(tibble,continent_name){
+  tibble %>%
+    gather(stat,growth_rate,lifeExp:popThous) %>%
+    filter(continent == "Africa") %>%
+    ggplot(aes(year,growth_rate,color=country)) +
+    geom_line() +
+    geom_hline(yintercept = 0) + 
+    facet_grid(stat~continent,scales="free") + 
+    theme_minimal() + 
+    theme(legend.position="none")
+} 
+
+# countryGrowthRates_fun("Africa")
+# countryGrowthRates_fun("Americas")
+
+countryGrowthRates_fun <- function(tibble, continent_name){
+  tibble %>%
+  gather(stat,growth_rate,lifeExp:popThous) %>%
+  left_join(.,select(flash,country,continent),by="country") %>% 
+  filter(continent == continent_name) %>%
+  ggplot(aes(year,growth_rate,color=stat)) +
+  geom_line() +
+  geom_hline(yintercept = 0) +
+  facet_wrap(~country) + 
+  theme_minimal()}
+
+# countryGrowthRates_fun("Africa")
+# countryGrowthRates_fun("Americas")
