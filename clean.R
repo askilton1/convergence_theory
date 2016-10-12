@@ -4,7 +4,6 @@ flash <- tbl_df(read.csv("4_Flash_Proj_1_Data.csv"))
 
 flash %>%
   mutate(country = str_replace_all(country,"[.,]",""),
-         country = str_replace_all(country," ","_"),
          country = as.factor(country),
          gdpPercap = gdpPercap/1000,
          popMill = popThous/1000) %>% 
