@@ -20,7 +20,6 @@ flash %>%
   ggplot(aes(x=year,y=value,color=continent)) +
   geom_line() + facet_grid(key~.,scales="free")
 
-
 flash %>%
   filter(continent == "Europe",
          year == 1977) %>%
