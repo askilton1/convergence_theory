@@ -55,19 +55,20 @@ flash %>%
   lm(lifeExp~poly(gdpPercap,3),.) -> mod
   
 flash %>%
-  select(country,lifeExp,gdpPercap,popMill) %>%
-  group_by(country) %>%
+  select(continent,country,lifeExp,gdpPercap,popMill) %>%
+  group_by(country,continent) %>%
   summarise_if(is.numeric,mean) %>%
+  ungroup %>%
   mutate(predicted = predict(mod),
-         difference = predicted-lifeExp,
-         label = ifelse(abs(difference) > 11,as.character(country),NA)) -> flashForPlot
+         difference = lifeExp-predicted,
+         label = ifelse(abs(difference) > sd(lifeExp),as.character(country),NA)) -> flashForPlot
 
 ggplot(flashForPlot) + 
   geom_point(aes(gdpPercap,lifeExp,color=label,size=popMill)) + 
   geom_smooth(aes(gdpPercap,predicted),se=FALSE) 
 
 ggplot(flashForPlot,aes(country,difference,fill=label)) + 
-  geom_bar(stat="identity") +
+  geom_bar(stat="identity",position="dodge") +
   theme_minimal() + 
   theme(legend.position="bottom",
         axis.text.x = element_blank(),
