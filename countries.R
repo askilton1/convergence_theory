@@ -50,9 +50,9 @@ countryGrowthRates_fun <- function(tibble, continent_name){
 
 #DIMINISHING RETURNS OF GDP PER CAPITA
 flash %>%
-  group_by(country) %>%
+  group_by(country,continent) %>%
   summarise_at(vars(lifeExp:popMill),mean) %>%
-  lm(lifeExp~poly(gdpPercap,3),.) -> mod
+  lm(lifeExp ~ poly(gdpPercap,3) + continent,.) -> mod
   
 flash %>%
   select(continent,country,lifeExp,gdpPercap,popMill) %>%
@@ -69,10 +69,10 @@ ggplot(flashForPlot) +
 
 flashForPlot %>%
   mutate(country = factor(country,levels=country[order(abs(difference),decreasing = T)],ordered=T)) %>%
-ggplot(aes(country,difference,fill=label)) + 
+ggplot(aes(country,difference,fill=label,alpha=abs(difference))) + 
   geom_bar(stat="identity",position="dodge") +
   theme_minimal() + 
   theme(legend.position="bottom",
         axis.text.x = element_blank(),
-        legend.title = element_blank())
+        legend.title = element_blank())#legends are for transparency and color
 
