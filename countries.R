@@ -61,15 +61,18 @@ flash %>%
   ungroup %>%
   mutate(predicted = predict(mod),
          difference = lifeExp-predicted,
-         label = ifelse(abs(difference) > sd(lifeExp),as.character(country),NA)) -> flashForPlot
+         label = ifelse(abs(difference) > 9,as.character(country),NA)) -> flashForPlot
 
 ggplot(flashForPlot) + 
   geom_point(aes(gdpPercap,lifeExp,color=label,size=popMill)) + 
   geom_smooth(aes(gdpPercap,predicted),se=FALSE) 
 
-ggplot(flashForPlot,aes(country,difference,fill=label)) + 
+flashForPlot %>%
+  mutate(country = factor(country,levels=country[order(abs(difference),decreasing = T)],ordered=T)) %>%
+ggplot(aes(country,difference,fill=label)) + 
   geom_bar(stat="identity",position="dodge") +
   theme_minimal() + 
   theme(legend.position="bottom",
         axis.text.x = element_blank(),
         legend.title = element_blank())
+
