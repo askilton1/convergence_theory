@@ -63,16 +63,31 @@ flash %>%
          difference = lifeExp-predicted,
          label = ifelse(abs(difference) > 9,as.character(country),NA)) -> flashForPlot
 
-ggplot(flashForPlot) + 
-  geom_point(aes(gdpPercap,lifeExp,color=label,size=popMill)) + 
-  geom_smooth(aes(gdpPercap,predicted),se=FALSE) 
+flashForPlot %>%
+  filter(country != "Australia") %>%
+ggplot() + 
+  geom_point(aes(gdpPercap,lifeExp,color=label#,size=popMill
+                 )) + 
+  geom_point(aes(gdpPercap,predicted)) +
+  geom_segment(aes(gdpPercap,lifeExp, xend = gdpPercap, yend = predicted, color = label)) +
+  geom_smooth(aes(gdpPercap,predicted#,color=continent
+                  ),se=FALSE) +
+  theme_minimal() + #facet_grid(continent~.,scales = "free") +
+  facet_wrap(~continent, scales = "free_x") +
+  theme(legend.position = "none") -> plot1
 
 flashForPlot %>%
+  filter(country != "Australia") %>%
   mutate(country = factor(country,levels=country[order(abs(difference),decreasing = T)],ordered=T)) %>%
 ggplot(aes(country,difference,fill=label,alpha=abs(difference))) + 
   geom_bar(stat="identity",position="dodge") +
   theme_minimal() + 
-  theme(legend.position="bottom",
+  theme(legend.position="top",
         axis.text.x = element_blank(),
-        legend.title = element_blank())#legends are for transparency and color
+        axis.ticks.x=element_blank(),
+        legend.title = element_blank()) + #legends are for transparency and color
+  facet_wrap(~continent, scales = "free_x") +
+  guides(alpha=FALSE) -> plot2
 
+library(gridExtra)
+grid.arrange(plot1,plot2)
