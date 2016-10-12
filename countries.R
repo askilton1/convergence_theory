@@ -63,16 +63,4 @@ flash %>%
 flashForPlot$label <- ifelse(flashForPlot$difference > 11,as.character(flashForPlot$country),NA)
 ggplot(flashForPlot) + 
   geom_point(aes(gdpPercap,lifeExp,color=label,size=popMill)) + 
-  #geom_text(aes(gdpPercap,lifeExp,label = label)) + 
-  geom_smooth(aes(gdpPercap,predicted),se=FALSE) #+ 
-  #scale_colour_gradient(high="red") 
-  
-"Angola" %in% c("Angola","Equatorial_Guinea","Gabon","Sri_Lanka","Vietnam")
-flash %>%
-  group_by(country) %>%
-  summarise_at(vars(lifeExp:popMill),mean) %>%
-  lm(lifeExp~gdpPercap,.) %>%
-  summary
-
-
-  summary
+  geom_smooth(aes(gdpPercap,predicted),se=FALSE) 
