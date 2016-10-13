@@ -24,18 +24,22 @@ lapply(libraries,require,character.only = TRUE)
 ```
 
 ```{r}
-flash <- tbl_df(read.csv("4_Flash_Proj_1_Data.csv"))
-
-flash %>%
+read.csv("4_Flash_Proj_1_Data.csv") %>% tbl_df %>%
   mutate(country = str_replace_all(country,"[.,]",""),
          country = as.factor(country),
          gdpPercap = gdpPercap/1000,
-         popMill = popThous/1000) %>% 
+         popMill = popThous/1000) %>%
+  mutate(first_world = ifelse(continent == "Europe" | 
+                                continent == "Oceania" | 
+                                country == "United States", 1, 0),
+         continent_world = ifelse(first_world == 1, 
+                                  "First World", 
+                                  as.character(continent))) %>%
   select(-popThous) -> flash
 ```
 
 ```{r,echo=FALSE}
-flash[1:10,] %>% kable(,caption="First ten rows of manipulated flash data")
+flash[1:10,] %>% kable(,caption="First ten rows of manipulated flash data",digits=2,align='c')
 ```
 
 \newpage
@@ -62,8 +66,8 @@ stargazer(mod,
 Here I create 'flashForPlot', a dataset where the average life expectancy of all five years is taken. 'flashForPlot' is designed to be used by ggplot2. It adds a column named 'fitted', which is the fitted values from the linear regression model above.
 ```{r,messages=F}
 flash %>%
-  select(continent,country,lifeExp,gdpPercap,popMill) %>%
-  group_by(country,continent) %>%
+  select(continent_world,country,lifeExp,gdpPercap,popMill) %>%
+  group_by(country,continent_world) %>%
   summarise_if(is.numeric,mean) %>%
   ungroup %>%
   mutate(predicted = predict(mod),
@@ -72,7 +76,7 @@ flash %>%
 ```
 
 ```{r,echo=FALSE}
-flashForPlot[1:10,] %>% kable(,caption="First ten rows of flashForPlot")
+flashForPlot[1:10,] %>% kable(,caption="First ten rows of flashForPlot",digits=2,align='c')
 ```
 
 
@@ -90,12 +94,13 @@ flashForPlot %>%
                      xend = gdpPercap, yend = predicted,
                      color = label)) +
     geom_smooth(aes(gdpPercap, predicted),se = FALSE) +
-    facet_wrap( ~ continent, scales = "free_x") +
+    facet_wrap( ~ continent_world, scales = "free_x") +
     theme_minimal() + 
     theme(legend.position = "none",
           panel.grid.major.y = element_blank()) +
     xlab("GDP per capita") + 
-    ylab("Life expectancy")
+    ylab("Life expectancy") + 
+    ggtitle("Life Expectancy by GDP per capita")
 ```
 
 \newpage
@@ -141,13 +146,31 @@ continentGrowthRates <- continentList[[1]]
 ```{r}
 continentGrowthRates %>%
   filter(continent != "Oceania") %>%
-  #gather(stat,growth_rate,lifeExp:popMill) %>%
   ggplot(aes(year,gdpPercap,color=continent)) +
-  geom_line() +
-  geom_hline(yintercept = 0) +
-  #facet_wrap(~continent) + 
-  theme_minimal() + 
-  xlab("Year") + 
-  ylab("Median GDP per capita growth rate")
+    geom_line() +
+    geom_hline(yintercept = 0) +
+    theme_minimal() + 
+    xlab("Year") + 
+    ylab("Median GDP per capita growth rate") + 
+    ggtitle("Median GDP per capita growth rate by Year")
+    theme(legend.position = "bottom")
+```
+
+\newpage
+
+#Median GDP Per Capita
+
+The chart below shows that first world countries have had a median GDP per capita that has been outpacing that of non first world countries in the Americas, Asia, and Africa.
+```{r}
+flash %>%
+  group_by(continent_world,year) %>%
+  summarise(median_gdpPerCap = median(gdpPercap)) %>%
+  ggplot(aes(year,median_gdpPerCap,color=continent_world)) +
+    geom_line() +
+    geom_hline(yintercept = 0) +
+    theme_minimal() + 
+    xlab("Year") + ylab("Median GDP per capita") + ggtitle("Median GDP per capita by Year") +
+    theme(legend.position = "bottom",
+          legend.title = element_blank())
 ```
 

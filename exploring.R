@@ -14,11 +14,17 @@ flash %>%
 
 #GDP per capita by year, all continents
 flash %>%
-  filter(country != "Australia") %>%
-  group_by(continent,year) %>%
-  summarise_if(is.numeric,median) %>%
-  ggplot(aes(x=year,y=gdpBillions,color=continent)) +
-  geom_line() + theme_minimal()
+  #filter(country != "Australia") %>%
+  #group_by(continent,year) %>%
+  #summarise_if(is.numeric,median) %>%
+  ggplot(aes(x=year,y=gdpPercap,color=country)) +
+  geom_line() + 
+  facet_grid(continent~.,scales = "free") +
+  theme_minimal() + theme(legend.position="none")
+
+flash %>%
+  filter(year == 1977) %>%
+  arrange(-gdpPercap)
 
 #gdpBillions, gdpPercap, lifeExp, and popThous by year (facets)
 flash %>%
