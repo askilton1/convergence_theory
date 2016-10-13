@@ -96,7 +96,8 @@ flashForPlot %>%
     geom_smooth(aes(gdpPercap, predicted),se = FALSE) +
     facet_wrap( ~ continent_world, scales = "free_x") +
     theme_minimal() + 
-    theme(legend.position = "none",
+    theme(legend.position = "bottom",
+          legend.title = element_blank(),
           panel.grid.major.y = element_blank()) +
     xlab("GDP per capita") + 
     ylab("Life expectancy") + 
