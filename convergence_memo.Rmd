@@ -1,10 +1,12 @@
 ---
-title: "Technical Appendix"
+title: "Flash Assignment Memo"
 author: "Antonio Skilton"
 date: "10/12/2016"
 output: pdf_document
 ---
 
+#Introduction
+The "flash" dataset contains seven columns and 568 rows. The last two columns are manipulated in the code below so that they are more readable. Each row is a country in a given year. The investigation of the dataset has revealed three important findings, as described below. First, the data shows that life expectancy is not only higher in nations with higher GDP per capita, but is also more variable than one might expect given GDP per capita. Second, comparing growth rates of GDP per capita shows that the GDP per capita growth rate in median country in each continent measured is growing. Third, median GDP per capita in first world countries is both far above that of third world countries in the Americas, Asia and Africa.
 
 
 ```{r,echo=FALSE, message=FALSE, warning=FALSE, results = "hide"}
@@ -48,8 +50,7 @@ flash %>%
          label = ifelse(abs(difference) > 9,as.character(country),NA)) -> flashForPlot
 ```
 
-The plot shows the difference between the fitted from the actual life expectancy value. The fitted values lie on the blue lines. The colored values represent the countries for which their average life expectancy is most different from what would be expected given their GDP per capita and continent.
-
+  The blue line in each of the four plots below represent where we might expect life expectancy to lie given a country's GDP per capita. The smaller lines that emerge vertically from that blue line reach points that represent the actual life expectancy and GDP per capita per country. The longer the line, the greater the difference is between what we might predict and a country's real values. The four countries whose true life expectancy is farthest from what we would predict are are all in Africa (and are labeled by color).
 ```{r,fig.align='center',echo=FALSE}
 flashForPlot %>%
   filter(country != "Australia") %>%
@@ -62,7 +63,8 @@ flashForPlot %>%
     geom_smooth(aes(gdpPercap, predicted),se = FALSE) +
     facet_wrap( ~ continent_world, scales = "free_x") +
     theme_minimal() + 
-    theme(legend.position = "none",
+    theme(legend.position = "bottom",
+          legend.title = element_blank(),
           panel.grid.major.y = element_blank()) +
     xlab("GDP per capita") + 
     ylab("Life expectancy") + 
@@ -99,8 +101,10 @@ for(i in 2:4) continentList[[1]] <- bind_cols(continentList[[1]],continentList[i
 continentGrowthRates <- continentList[[1]]
 ```
 
-This plot shows that the median growth rates in the different continents are all increasing, but have been volatile over time.
-```{r,echo=FALSE,message=FALSE}
+  Macroeconomic theory holds that countries with lower GDP per capita will experience faster growth rates than richer, more developed countries. The plot below tests this hypothesis It depicts the median GDP per capita growth rate of each continent by year. From the plot we can conclue that although recently growth rates have followed what we might expect convergence theory recently, over the past few decades the third world has on average seen negative growth rates.
+  
+
+```{r,echo=FALSE,message=FALSE,fig.align="center"}
 continentGrowthRates %>%
   filter(continent != "Oceania") %>%
   ggplot(aes(year,gdpPercap,color=continent)) +
@@ -118,9 +122,9 @@ continentGrowthRates %>%
 
 #Median GDP Per Capita
 
-The chart below shows that first world countries have had a median GDP per capita that has been outpacing that of non first world countries in the Americas, Asia, and Africa.
+  The median country in the first world has both the highest GDP per capita and the fastest growth rate. Third world countries in all other continents, it appears, have not grown in such a clear way. 
 
-```{r,echo=FALSE}
+```{r,echo=FALSE,fig.align="center"}
 flash %>%
   group_by(continent_world,year) %>%
   summarise(median_gdpPerCap = median(gdpPercap)) %>%
@@ -133,3 +137,6 @@ flash %>%
           legend.title = element_blank())
 ```
 
+#Conclusion
+
+  Despite how small the dataset seems, there are a thousand different directions further research with this dataset could go. Finding similarities between countries in different countries could flesh out the factors that determine GDP per capita growth rate. For example, it is possible that countries with a high GDP but a low GDP per capita might have different growth rates than do other countries. However, the conclusions drawn from this project illuminate relationships between life expectancy time, and GDP per capita.
