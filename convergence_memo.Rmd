@@ -1,0 +1,135 @@
+---
+title: "Technical Appendix"
+author: "Antonio Skilton"
+date: "10/12/2016"
+output: pdf_document
+---
+
+
+
+```{r,echo=FALSE, message=FALSE, warning=FALSE, results = "hide"}
+libraries <- c("dplyr","tidyr","ggplot2","stringr","reshape2","gridExtra","knitr","stargazer")
+lapply(libraries,require,character.only = TRUE)
+```
+
+```{r,echo=FALSE}
+read.csv("4_Flash_Proj_1_Data.csv") %>% tbl_df %>%
+  mutate(country = str_replace_all(country,"[.,]",""),
+         country = as.factor(country),
+         gdpPercap = gdpPercap/1000,
+         popMill = popThous/1000) %>%
+  mutate(first_world = ifelse(continent == "Europe" | 
+                                continent == "Oceania" | 
+                                country == "United States", 1, 0),
+         continent_world = ifelse(first_world == 1, 
+                                  "First World", 
+                                  as.character(continent))) %>%
+  select(-popThous) -> flash
+```
+
+
+#Life Expectancy
+
+```{r,echo=FALSE}
+flash %>%
+  group_by(country,continent) %>%
+  summarise_at(vars(lifeExp:popMill),mean) %>%
+  lm(lifeExp ~ poly(gdpPercap,3) + continent,.) -> mod
+```
+
+```{r,messages=F,echo=FALSE}
+flash %>%
+  select(continent_world,country,lifeExp,gdpPercap,popMill) %>%
+  group_by(country,continent_world) %>%
+  summarise_if(is.numeric,mean) %>%
+  ungroup %>%
+  mutate(predicted = predict(mod),
+         difference = lifeExp-predicted,
+         label = ifelse(abs(difference) > 9,as.character(country),NA)) -> flashForPlot
+```
+
+The plot shows the difference between the fitted from the actual life expectancy value. The fitted values lie on the blue lines. The colored values represent the countries for which their average life expectancy is most different from what would be expected given their GDP per capita and continent.
+
+```{r,fig.align='center',echo=FALSE}
+flashForPlot %>%
+  filter(country != "Australia") %>%
+  ggplot() + 
+    geom_point(aes(gdpPercap, lifeExp,color=label)) + 
+    geom_point(aes(gdpPercap, predicted)) +
+    geom_segment(aes(x = gdpPercap, y = lifeExp,
+                     xend = gdpPercap, yend = predicted,
+                     color = label)) +
+    geom_smooth(aes(gdpPercap, predicted),se = FALSE) +
+    facet_wrap( ~ continent_world, scales = "free_x") +
+    theme_minimal() + 
+    theme(legend.position = "none",
+          panel.grid.major.y = element_blank()) +
+    xlab("GDP per capita") + 
+    ylab("Life expectancy") + 
+    ggtitle("Life Expectancy by GDP per capita")
+```
+
+\newpage
+
+#Convergence
+```{r,echo=FALSE}
+statNames <- names(select(flash,lifeExp:popMill))
+```
+
+```{r,echo=FALSE}
+continentList <- lapply(statNames,function(x){
+  flash %>%
+    spread_("continent",x) %>%
+    group_by(year) %>%
+    summarise_at(vars(Africa:Oceania),function(col) median(col,na.rm=T)) %>%
+    select(-year) %>% #must remove year because we do not need its growth rate
+    as.matrix %>% #growth rate transformation only possible as matrix
+    log %>% diff %>% #calculate growth rates as the difference of the log values
+    tbl_df %>% #mutate() only possible with tibble (or data frame)
+    mutate(year = seq(1977,2007,5)) %>%
+    melt("year",1:5,variable.name="continent",value.name=paste(x)) %>%
+    tbl_df -> flash2
+  if(which(statNames == x) == 1){flash2}#if in first loop, lapply returns three columns
+  else{select_(flash2,x)}#if not in first loop, lapply returns newly calculated column
+})
+```
+
+```{r,echo=FALSE}
+for(i in 2:4) continentList[[1]] <- bind_cols(continentList[[1]],continentList[i])
+continentGrowthRates <- continentList[[1]]
+```
+
+This plot shows that the median growth rates in the different continents are all increasing, but have been volatile over time.
+```{r,echo=FALSE,message=FALSE}
+continentGrowthRates %>%
+  filter(continent != "Oceania") %>%
+  ggplot(aes(year,gdpPercap,color=continent)) +
+    geom_line() +
+    geom_hline(yintercept = 0) +
+    theme_minimal() + 
+    xlab("Year") + 
+    ylab("Median GDP per capita growth rate") + 
+    ggtitle("Median GDP per capita growth rate by Year") +
+    theme(legend.position = "bottom",
+          legend.title = element_blank())
+```
+
+\newpage
+
+#Median GDP Per Capita
+
+The chart below shows that first world countries have had a median GDP per capita that has been outpacing that of non first world countries in the Americas, Asia, and Africa.
+
+```{r,echo=FALSE}
+flash %>%
+  group_by(continent_world,year) %>%
+  summarise(median_gdpPerCap = median(gdpPercap)) %>%
+  ggplot(aes(year,median_gdpPerCap,color=continent_world)) +
+    geom_line() +
+    geom_hline(yintercept = 0) +
+    theme_minimal() + 
+    xlab("Year") + ylab("Median GDP per capita") + ggtitle("Median GDP per capita by Year") +
+    theme(legend.position = "bottom",
+          legend.title = element_blank())
+```
+
