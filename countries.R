@@ -74,7 +74,8 @@ ggplot() +
                   ),se=FALSE) +
   theme_minimal() + #facet_grid(continent~.,scales = "free") +
   facet_wrap(~continent, scales = "free_x") +
-  theme(legend.position = "none") -> plot1
+  theme(legend.position = "none",
+        panel.grid.major.y = element_blank()) -> plot1
 
 flashForPlot %>%
   filter(country != "Australia") %>%
@@ -85,9 +86,9 @@ ggplot(aes(country,difference,fill=label,alpha=abs(difference))) +
   theme(legend.position="top",
         axis.text.x = element_blank(),
         axis.ticks.x=element_blank(),
-        legend.title = element_blank()) + #legends are for transparency and color
+        axis.title.x=element_blank(),
+        legend.title = element_blank(),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank()) + #legends are for transparency and color
   facet_wrap(~continent, scales = "free_x") +
   guides(alpha=FALSE) -> plot2
-
-library(gridExtra)
-grid.arrange(plot1,plot2)

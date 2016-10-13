@@ -1,0 +1,101 @@
+---
+title: "Technical Appendix"
+author: "Antonio Skilton"
+date: "10/12/2016"
+output: pdf_document
+---
+
+##Cleaning the data
+The "flash" dataset contains seven columns and 568 rows. The last two columns are manipulated in the code below so that they are more readable. Each row is a country in a given year.
+
+####Columns:
++ country
++ continent
++ year 
++ life expectancy
++ GDP per capita
++ GDP in billions of dollars
++ population in millions of people
+
+
+```{r,echo=FALSE, message=FALSE, warning=FALSE, results = "hide"}
+libraries <- c("dplyr","tidyr","ggplot2","stringr","reshape2","gridExtra","knitr","stargazer")
+lapply(libraries,require,character.only = TRUE)
+```
+
+```{r}
+flash <- tbl_df(read.csv("4_Flash_Proj_1_Data.csv"))
+
+flash %>%
+  mutate(country = str_replace_all(country,"[.,]",""),
+         country = as.factor(country),
+         gdpPercap = gdpPercap/1000,
+         popMill = popThous/1000) %>% 
+  select(-popThous) -> flash
+```
+
+```{r,echo=FALSE}
+flash[1:10,] %>% kable(,caption="First ten rows of manipulated flash data")
+```
+
+\newpage
+
+#Life Expectancy
+
+According to the regression results, we see that a life expectancy is highly correlated with GDP per capita. Furthermore, we see that every continent has as higher life expectancy than Africa even when GDP per capita is held constant. Even Oceania, which is represented only by Australia, has a significantly different life expectancy than Africa. 
+
+```{r}
+flash %>%
+  group_by(country,continent) %>%
+  summarise_at(vars(lifeExp:popMill),mean) %>%
+  lm(lifeExp ~ poly(gdpPercap,3) + continent,.) -> mod
+```
+
+```{r,results='asis',echo=FALSE}
+stargazer(mod,
+          covariate.labels=c("GDP/capita","(GDP/capita)$^{2}$","(GDP/capita)$^{3}$","Americas",
+                             "Asia","Europe","Oceania"),type='latex',no.space=TRUE,header=FALSE)
+```
+
+\newpage
+
+Here I create 'flashForPlot', a dataset where the average life expectancy of all five years is taken. 'flashForPlot' is designed to be used by ggplot2. It adds a column named 'fitted', which is the fitted values from the linear regression model above.
+```{r,messages=F}
+flash %>%
+  select(continent,country,lifeExp,gdpPercap,popMill) %>%
+  group_by(country,continent) %>%
+  summarise_if(is.numeric,mean) %>%
+  ungroup %>%
+  mutate(predicted = predict(mod),
+         difference = lifeExp-predicted,
+         label = ifelse(abs(difference) > 9,as.character(country),NA)) -> flashForPlot
+```
+
+```{r,echo=FALSE}
+flashForPlot[1:10,] %>% kable(,caption="First ten rows of flashForPlot")
+```
+
+
+\newpage
+
+The code below produces the plot below. The plot shows the difference between the fitted from the actual life expectancy value. The fitted values lie on the blue lines. The colored values represent the countries for which their average life expectancy is most different from what would be expected given their GDP per capita and continent.
+
+```{r,fig.align='center'}
+flashForPlot %>%
+  filter(country != "Australia") %>%
+  ggplot() + 
+    geom_point(aes(gdpPercap, lifeExp,color=label)) + 
+    geom_point(aes(gdpPercap, predicted)) +
+    geom_segment(aes(x = gdpPercap, y = lifeExp,
+                     xend = gdpPercap, yend = predicted,
+                     color = label)) +
+    geom_smooth(aes(gdpPercap, predicted),se = FALSE) +
+    facet_wrap( ~ continent, scales = "free_x") +
+    theme_minimal() + 
+    theme(legend.position = "none",
+          panel.grid.major.y = element_blank()) +
+    xlab("GDP per capita") + 
+    ylab("Life expectancy")
+```
+
+\newpage
