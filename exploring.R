@@ -12,9 +12,17 @@ flash %>%
   ggplot(aes(x=year,y=lifeExp,color=continent)) +
   geom_line()
 
+#GDP per capita by year, all continents
+flash %>%
+  filter(country != "Australia") %>%
+  group_by(continent,year) %>%
+  summarise_if(is.numeric,median) %>%
+  ggplot(aes(x=year,y=gdpBillions,color=continent)) +
+  geom_line() + theme_minimal()
+
 #gdpBillions, gdpPercap, lifeExp, and popThous by year (facets)
 flash %>%
-  gather(key,value,lifeExp:popThous) %>%
+  gather(key,value,lifeExp:popMill) %>%
   group_by(continent,year,key) %>%
   summarise(value = mean(value)) %>%
   ggplot(aes(x=year,y=value,color=continent)) +

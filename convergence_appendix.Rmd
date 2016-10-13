@@ -99,3 +99,55 @@ flashForPlot %>%
 ```
 
 \newpage
+
+#Convergence
+First, we create a vector of the names of the three statistics columns.
+```{r}
+statNames <- names(select(flash,lifeExp:popMill))
+```
+
+```{r,echo=FALSE}
+statNames
+```
+
+
+I use the lapply function to calculate growth rates.
+```{r}
+continentList <- lapply(statNames,function(x){
+  flash %>%
+    spread_("continent",x) %>%
+    group_by(year) %>%
+    summarise_at(vars(Africa:Oceania),function(col) median(col,na.rm=T)) %>%
+    select(-year) %>% #must remove year because we do not need its growth rate
+    as.matrix %>% #growth rate transformation only possible as matrix
+    log %>% diff %>% #calculate growth rates as the difference of the log values
+    tbl_df %>% #mutate() only possible with tibble (or data frame)
+    mutate(year = seq(1977,2007,5)) %>%
+    melt("year",1:5,variable.name="continent",value.name=paste(x)) %>%
+    tbl_df -> flash2
+  if(which(statNames == x) == 1){flash2}#if in first loop, lapply returns three columns
+  else{select_(flash2,x)}#if not in first loop, lapply returns newly calculated column
+})
+```
+
+Using a for loop, I iteratively bind each successive column to the first data frame.
+```{r}
+for(i in 2:4) continentList[[1]] <- bind_cols(continentList[[1]],continentList[i])
+continentGrowthRates <- continentList[[1]]
+```
+
+\newpage
+
+```{r}
+continentGrowthRates %>%
+  filter(continent != "Oceania") %>%
+  #gather(stat,growth_rate,lifeExp:popMill) %>%
+  ggplot(aes(year,gdpPercap,color=continent)) +
+  geom_line() +
+  geom_hline(yintercept = 0) +
+  #facet_wrap(~continent) + 
+  theme_minimal() + 
+  xlab("Year") + 
+  ylab("Median GDP per capita growth rate")
+```
+
