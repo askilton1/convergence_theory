@@ -1,7 +1,7 @@
-libraries <- c("dplyr","tidyr","ggplot2","stringr","reshape2","gridExtra","knitr","stargazer")
+libraries <- c("tidyverse","stringr","reshape2","gridExtra","knitr","stargazer")
 lapply(libraries,require,character.only = TRUE)
 
-read.csv("4_Flash_Proj_1_Data.csv") %>% tbl_df %>%
+read_csv("4_Flash_Proj_1_Data.csv") %>%
   mutate(country = str_replace_all(country,"[.,]",""),
          country = as.factor(country),
          gdpPercap = gdpPercap/1000,
